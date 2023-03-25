@@ -43,11 +43,16 @@ body {
                     width: 100%;
                     justify-content: center;
                     gap: 2vw;
+
+                    #active {
+                        background-color: #353030;
+                        border-radius: 10px;
+                    }
+                    .profile-nav {
+                        border: none;
+                    }
                     div {
-                        border: 2px solid $stroke_color;
-                        padding: 5px;
-                        border-radius: 10%;
-                        
+                        padding: 10px;
 
                         .link-nav {
                             display: flex;
