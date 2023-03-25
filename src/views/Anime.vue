@@ -2,7 +2,10 @@
     <div>
         <h2>Аниме</h2>
         <div class="anime-container">
-            <Card anime_title="Наруто" />
+            <Card anime_thumb="https://gen.jut.su/templates/school/images/anime_naruto_season-1.jpg" anime_title="Наруто" anime_seasons="2 сезона" anime_episodes="720 эпизодов" />
+            <Card anime_thumb="https://gen.jut.su/templates/school/images/anime_naruto_season-1.jpg" anime_title="Наруто" anime_seasons="2 сезона" anime_episodes="720 эпизодов" />
+            <Card anime_thumb="https://gen.jut.su/templates/school/images/anime_naruto_season-1.jpg" anime_title="Наруто" anime_seasons="2 сезона" anime_episodes="720 эпизодов" />
+            <Card anime_thumb="https://gen.jut.su/templates/school/images/anime_naruto_season-1.jpg" anime_title="Наруто" anime_seasons="2 сезона" anime_episodes="720 эпизодов" />
         </div>
     </div>
 </template>
@@ -14,14 +17,17 @@ import Card from '../components/Card.vue';
 
 h2 {
     text-align: center;
+    margin-top: 2vh;
+    font-weight: 800;
+    font-size: 2rem;
 }
 .anime-container {
-    display: grid;
-    height: 150vh;
-    width: 98vw;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    margin: 15px auto;
-    border-radius: 10px;
-    
+    display: flex;
+    margin: 0;
+    min-height: 50vh;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin: 4vh 0 0 0;
 }
 </style>
