@@ -1,7 +1,17 @@
 <template>
-    <div class="header">
-        <div class="header-content">
-            <h1 class="header-title">{{ title }}</h1>
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div class="side-element">
+                <router-link to="/" class="side-link">Аниме</router-link>
+                <router-link to="/forum" class="side-link">Форум</router-link>
+                <router-link to="/pedia" class="side-link">Нарутопедия</router-link>
+                <router-link to="/profile" class="side-link">Профиль</router-link>
+            </div>
+        </div>
+    </aside>
+    <div class="navbar">
+        <div class="navbar-content">
+            <h1 class="navbar-title">{{ title }}</h1>
             <nav class="nav">
                 <div class="anime-nav" :id="$route.path === '/' ? 'active' : ''">
                     <router-link class="link-nav" to="/">
@@ -40,7 +50,7 @@ import profileSrc from '../img/nav-icons/profile.svg'
 
 import router from '../router'
 export default {
-    name: 'Header',
+    name: 'SideNavbar',
     data() {
         return {
             animeSrc,
