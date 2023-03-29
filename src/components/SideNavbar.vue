@@ -3,8 +3,14 @@
         <div class="sidebar-content">
             <div class="side-element">
                 <router-link to="/" class="side-link">Аниме</router-link>
+            </div>
+            <div class="side-element">
                 <router-link to="/forum" class="side-link">Форум</router-link>
+            </div>
+            <div class="side-element">
                 <router-link to="/pedia" class="side-link">Нарутопедия</router-link>
+            </div>
+            <div class="side-element">
                 <router-link to="/profile" class="side-link">Профиль</router-link>
             </div>
         </div>
