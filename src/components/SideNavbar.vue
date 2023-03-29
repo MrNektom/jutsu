@@ -67,3 +67,75 @@ export default {
     }
 }
 </script>
+
+<style scoped lang="scss">
+
+@import '../variables.scss';
+@media screen and (max-width: 768px) {
+        .sidebar {
+            display: none;
+            visibility: hidden;
+        }
+        
+        .navbar {
+            background-color: $background;
+            display: flex;
+            justify-content: center;
+            height: 90px;
+            width: 100vw;
+            position: fixed;
+            bottom: 0;
+            .navbar-content {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                border-top: 2px solid $stroke_color;
+                .navbar-title {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                .nav {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    gap: 2vw;
+
+                    #active {
+                        background-color: #353030;
+                        border-radius: 10px;
+                    }
+                    .profile-nav {
+                        border: none;
+                    }
+                    div {
+                        padding: 10px;
+
+                        .link-nav {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            text-decoration: none;
+                            color: $default_text_color;
+                        }
+                    }
+                    img {
+                        width: 32px;
+                        height: 32px;
+                    }
+
+                    h3 {
+                        font-weight: 300;
+                        font-size: 1rem;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+
+    }
+</style>

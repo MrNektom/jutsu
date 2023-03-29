@@ -5,7 +5,7 @@
                     <img :src="anime_thumb" alt="" class="anime-thumb" height="100" width="100">
                     <div class="anime-info">
                         <h2 class="anime-title">{{ anime_title }}</h2>
-                        <p class="anime-genres"></p>
+                        <p class="anime-genres" v-if="typeof anime_films !== 'undefined'">{{ anime_genres }}</p>
                         <p class="anime-seasons" v-if="typeof anime_films !== 'undefined'">{{ anime_seasons }}</p>
                         <p class="anime-episodes" v-if="typeof anime_films !== 'undefined'">{{ anime_episodes }}</p>
                         <p class="anime-films" v-if="typeof anime_films !== 'undefined'">{{ anime_films }}</p>
