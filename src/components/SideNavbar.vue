@@ -1,20 +1,46 @@
+<script>
+import animeSrc from '../img/nav-icons/anime.svg'
+import forumSrc from '../img/nav-icons/forum.svg'
+import pediaSrc from '../img/nav-icons/pedia.svg'
+import profileSrc from '../img/nav-icons/profile.svg'
+
+import router from '../router'
+export default {
+    name: 'SideNavbar',
+    data() {
+        return {
+            animeSrc,
+            forumSrc,
+            profileSrc,
+            pediaSrc
+        }
+    },
+    props: {
+        title: {
+            type: String,
+            required: true
+        }
+    }
+}
+</script>
+
 <template>
-    <aside class="sidebar">
-        <div class="sidebar-content">
-            <div class="side-element">
-                <router-link to="/" class="side-link">Аниме</router-link>
-            </div>
-            <div class="side-element">
-                <router-link to="/forum" class="side-link">Форум</router-link>
-            </div>
-            <div class="side-element">
-                <router-link to="/pedia" class="side-link">Нарутопедия</router-link>
-            </div>
-            <div class="side-element">
-                <router-link to="/profile" class="side-link">Профиль</router-link>
-            </div>
-        </div>
-    </aside>
+    <!-- <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <div class="side-element">
+                            <router-link to="/" class="side-link">Аниме</router-link>
+                        </div>
+                        <div class="side-element">
+                            <router-link to="/forum" class="side-link">Форум</router-link>
+                        </div>
+                        <div class="side-element">
+                            <router-link to="/pedia" class="side-link">Нарутопедия</router-link>
+                        </div>
+                        <div class="side-element">
+                            <router-link to="/profile" class="side-link">Профиль</router-link>
+                        </div>
+                    </div>
+                </aside> -->
     <div class="navbar">
         <div class="navbar-content">
             <h1 class="navbar-title">{{ title }}</h1>
@@ -48,100 +74,102 @@
     </div>
 </template>
 
-<script>
-import animeSrc from '../img/nav-icons/anime.svg'
-import forumSrc from '../img/nav-icons/forum.svg'
-import pediaSrc from '../img/nav-icons/pedia.svg'
-import profileSrc from '../img/nav-icons/profile.svg'
+<style scoped lang="scss">
+@import '../variables.scss';
 
-import router from '../router'
-export default {
-    name: 'SideNavbar',
-    data() {
-        return {
-            animeSrc,
-            forumSrc,
-            profileSrc,
-            pediaSrc
+.navbar {
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 70px;
+
+    .navbar-title {
+        display: none;
+        visibility: hidden;
+    }
+
+    .nav {
+        display: grid;
+        grid-auto-rows: 70px;
+        width: 100%;
+        justify-content: center;
+        gap: 2px;
+
+        
+        #active {
+            background-color: #353030;
+            border-radius: 10px;
         }
-    },
-    props: {
-        title: {
-            type: String,
-            required: true
+        
+        .profile-nav {
+            border: none;
+        }
+        
+        div {
+            flex: 1  50px;
+            padding: 10px;
+            
+            .link-nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-decoration: none;
+                color: $default_text_color;
+
+                
+                img {
+                    height: 32px;
+                    widows: 32px;
+                }
+            }
+        }
+        
+        
+        h3 {
+            font-weight: 300;
+            font-size: 1rem;
+            font-size: 12px;
         }
     }
 }
-</script>
 
-<style scoped lang="scss">
+@media screen and (min-width: 786px) {
+    .navbar {
+        border-right: 2px solid $stroke_color;
+    }
+}
 
-@import '../variables.scss';
-@media screen and (max-width: 768px) {
-        .sidebar {
-            display: none;
-            visibility: hidden;
-        }
-        
-        .navbar {
-            background-color: $background;
+@media screen and (max-width: 786px) {
+    .sidebar {
+        display: none;
+        visibility: hidden;
+    }
+
+    .navbar {
+        flex-direction: row;
+        height: 90px;
+        width: 100vw;
+
+        .navbar-content {
             display: flex;
-            justify-content: center;
-            height: 90px;
-            width: 100vw;
-            position: fixed;
-            bottom: 0;
-            .navbar-content {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                border-top: 2px solid $stroke_color;
-                .navbar-title {
-                    display: none;
-                    visibility: hidden;
-                }
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid $stroke_color;
 
-                .nav {
-                    display: flex;
-                    width: 100%;
-                    justify-content: center;
-                    gap: 2vw;
 
-                    #active {
-                        background-color: #353030;
-                        border-radius: 10px;
-                    }
-                    .profile-nav {
-                        border: none;
-                    }
-                    div {
-                        padding: 10px;
 
-                        .link-nav {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            text-decoration: none;
-                            color: $default_text_color;
-                        }
-                    }
-                    img {
-                        width: 32px;
-                        height: 32px;
-                    }
-
-                    h3 {
-                        font-weight: 300;
-                        font-size: 1rem;
-                    }
-                }
+            .nav {
+                grid-auto-rows: unset;
+                grid-template-rows: 50px;
+                grid-auto-flow: column;
             }
-            
         }
-    }
-
-    @media screen and (min-width: 768px) {
 
     }
+}
+
+@media screen and (min-width: 768px) {}
 </style>
